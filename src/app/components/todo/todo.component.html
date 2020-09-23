@@ -1,0 +1,30 @@
+<div class="container">
+
+      <div class="depth-test">
+      	<button class="text-center" (click)="calculateDepth()" >Calculate Depth</button>
+        <p  *ngFor="let tr of testResults; let i = index;">
+          {{printObj(tests[i])}} ===> {{tr}}
+        </p>
+    </div>
+	<form #todoForm="ngForm" (submit)="todoSubmit(todoForm.value)">
+
+	
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-8">
+					<input type="text" #todo  class="form-control" placeholder="Add Todo" name="todo" ngModel>
+        </div>
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-primary" (click)="addTodo(todo.value)">
+          Add
+          </button>
+        </div>
+      </div>
+		</div>
+		<div class="data">
+		<ul class="list-unstyled">
+			<li *ngFor="let todo of todoArray">{{todo}}</li>
+		</ul>
+	</div>
+	</form>
+</div>
